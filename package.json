@@ -1,0 +1,34 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "trillo app",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass --watch --update --style=expanded sass/main.scss css/style.css",
+    "dev:server": "live-server",
+    "start": "npm-run-all --parallel dev:server watch:sass",
+    "compile:sass": "sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "sass --no-source-map --style=compressed css/style.prefix.css css/style.css",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorcanto/trillo.git"
+  },
+  "author": "Victor Canto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorcanto/trillo/issues"
+  },
+  "homepage": "https://github.com/victorcanto/trillo#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.52.1"
+  }
+}
