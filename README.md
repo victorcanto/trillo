@@ -55,6 +55,4 @@ or
   yarn start
 ```
 
-Author: [Victor Canto](https://www.linkedin.com/in/vscanto/)
-
 
